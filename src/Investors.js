@@ -71,7 +71,7 @@ function Investors() {
                   </div>
                   <div className="col-md-5 col-xl-4 offset-lg-1" data-aos="fade-up" data-aos-duration="400" data-aos-offset="170">
                      <div className="ps-md-3 ps-lg-0">
-                        <img className="d-block d-dark-mode-none mb-2 mb-lg-3" style={{ height: "4rem" }} draggable="false" src="assets/img/main/stream1.svg" alt="Champion" />
+                        <img className="d-block d-dark-mode-none mb-2 mb-lg-3" style={{ height: "4rem" }} draggable="false" src="assets/img/main/stream1.svg"/>
                         <h2 className="h4 text-light">Stream Podcasts</h2>
                         <p className="fs-lg pb-3 pb-lg-4 mb-3 text-light">Aren't you sick of ads? Stream podcasts ad-free on Lollywest. Follow creators to keep up to date on feature prices and special content.</p>
                      </div>
