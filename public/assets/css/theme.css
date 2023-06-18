@@ -2856,7 +2856,7 @@ textarea.form-control-lg {
 
 .btn-info {
   --ar-btn-color: #000;
-  --ar-btn-bg: #b68ae4;
+  --ar-btn-bg: black;
   --ar-btn-border-color: #b68ae4;
   --ar-btn-hover-color: #000;
   --ar-btn-hover-bg: #b68ae4;
@@ -17793,7 +17793,7 @@ img-comparison-slider:focus {
 }
 
 .pt-new {
-  padding-top: 7rem; 
+  padding-top: 6rem; 
 }
 
 .bg-pastel {

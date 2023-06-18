@@ -66,15 +66,17 @@ function Investors() {
                   <div className="col-md-7 col-lg-6 mb-4 mb-md-0">
                      <a className="d-block position-relative">
                         <div className="bg-dark rounded-5 position-absolute top-0 start-0 w-100 h-100" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250"></div>
-                        <img className="d-block position-relative zindex-2 mx-auto" draggable="false" src="assets/img/main/Player.png" width="200" alt="Image" data-aos="fade-in" data-aos-duration="400" data-aos-offset="250" />
+                        <img className="d-block position-relative zindex-2 mx-auto" draggable="false" src="assets/img/main/player.png" width="200" alt="Image" data-aos="fade-in" data-aos-duration="400" data-aos-offset="250" />
                      </a>
                   </div>
+
                   <div className="col-md-5 col-xl-4 offset-lg-1" data-aos="fade-up" data-aos-duration="400" data-aos-offset="170">
                      <div className="ps-md-3 ps-lg-0">
-                        <img className="d-block d-dark-mode-none mb-2 mb-lg-3" style={{ height: "4rem" }} draggable="false" src="assets/img/main/stream1.svg"/>
+                        <img className="d-block d-dark-mode-none mb-2 mb-lg-3" style={{ height: "4rem" }} draggable="false" src="assets/img/main/stream1.svg" />
                         <h2 className="h4 text-light">Stream Podcasts</h2>
                         <p className="fs-lg pb-3 pb-lg-4 mb-3 text-light">Aren't you sick of ads? Stream podcasts ad-free on Lollywest. Follow creators to keep up to date on feature prices and special content.</p>
                      </div>
+
                   </div>
                </div>
                <div className="row align-items-center pt-xl-2 pb-5 mb-lg-2 mb-xl-3 mb-xxl-4">
@@ -111,7 +113,7 @@ function Investors() {
                   <div className="col-md-7 col-lg-6 mb-4 mb-md-0">
                      <a className="d-block position-relative">
                         <div className="bg-dark rounded-5 position-absolute top-0 start-0 w-100 h-100" data-aos="zoom-in" data-aos-duration="600" data-aos-offset="250"></div>
-                        <img className="d-block position-relative zindex-2 mx-auto" draggable="false" src="assets/img/main/Player.png" width="200" alt="Image" data-aos="fade-in" data-aos-duration="400" data-aos-offset="250" />
+                        <img className="d-block position-relative zindex-2 mx-auto" draggable="false" src="assets/img/main/player.png" width="200" alt="Image" data-aos="fade-in" data-aos-duration="400" data-aos-offset="250" />
                      </a>
                   </div>
                   <div className="col-md-5 col-xl-4 offset-lg-1" data-aos="fade-up" data-aos-duration="400" data-aos-offset="170">

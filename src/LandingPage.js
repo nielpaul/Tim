@@ -46,8 +46,8 @@ function LandingPage() {
                <div className="d-flex flex-column align-items-center w-lg-50 h-100 px-3 px-lg-5 pt-5">
                   <div className="w-100 mt-auto" style={{ maxWidth: "526px" }}>
                      <img className="pt-3" draggable="false" src="assets/img/white.png" />
-                     <h5 className="display-6 text-center text-lg-start pt-5 pb-sm-2 pb-md-3">Where podcasters and fans thrive together. </h5>
-                     <h5 className="fs-lg text-center text-lg-start  mx-auto mx-lg-0 mb-5">Join Lollywest to stream, discuss, and trade features of your favorite podcasts.</h5>
+                     <h5 className="display-5 text-center text-lg-start pt-new pb-sm-2 pb-md-3">Where podcasters & fans thrive together. </h5>
+                     <h4 className="fs-lg text-center text-xl-start  mx-auto mx-lg-0 mb-5">Stream and trade features of your favorite podcasts.</h4>
                      <form className="needs-validation" onSubmit={joinWaitlist} novalidate>
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2">
                            <div className="col mb-3">
