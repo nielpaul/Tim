@@ -41,7 +41,7 @@ function LandingPage() {
       var isPodcaster = document.getElementById("isPodcaster").value;
 
       try {
-         addDoc(collection(firestore, "users"), {
+         await addDoc(collection(firestore, "users"), {
             name: name,
             email: email,
             phoneNumber: phoneNumber,
