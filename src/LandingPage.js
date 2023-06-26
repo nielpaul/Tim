@@ -1,41 +1,65 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from 'axios';
+import { initializeApp } from "firebase/app";
+import { getFirestore, addDoc, collection } from "firebase/firestore";
+
 
 
 function LandingPage() {
 
-   const [name, setName] = useState("");
-   const [email, setEmail] = useState("");
-   const [message, setMessage] = useState("");
-   const [phoneNumber, setPhoneNumber] = useState("");
-   const [isPodcaster, setIsPodcaster] = useState(false);
-   const checkIsPodcaster = () => {
-      setIsPodcaster(!isPodcaster)
-   }
+   // TODO: Add SDKs for Firebase products that you want to use
+   // https://firebase.google.com/docs/web/setup#available-libraries
 
-   /* Function to allow users to join the waitlist. */
-   const joinWaitlist = async (event) => {
+   // Your web app's Firebase configuration
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+   const firebaseConfig = {
+      apiKey: "AIzaSyBf9f-UBY2N1G_jYqiiheCJPZ__4Ih6Z1s",
+      authDomain: "lollywest-abfa6.firebaseapp.com",
+      databaseURL: "https://lollywest-abfa6-default-rtdb.firebaseio.com",
+      projectId: "lollywest-abfa6",
+      storageBucket: "lollywest-abfa6.appspot.com",
+      messagingSenderId: "773997592011",
+      appId: "1:773997592011:web:28bdd397dec30c44a48a4e",
+      measurementId: "G-LZXP6QF51X"
+   };
 
-      event.preventDefault();
+   const firebaseApp = initializeApp(firebaseConfig);
+   const firestore = getFirestore(firebaseApp);
+
+
+   useEffect(() => {
+      const submit = document.querySelector("#submit");
+      submit.addEventListener('click', submitData);
+
+      // Clean up the event listener when the component unmounts
+      return () => {
+         submit.removeEventListener('click', submitData);
+      };
+   }, []);
+
+   function submitData() {
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phoneNumber = document.getElementById("phoneNumber").value;
+      var isPodcaster = document.getElementById("isPodcaster").value;
 
       try {
-         /* Sends a response to the backend and gives it the information needed for registration */
-         await axios.post("http://localhost:3001/users/joinWaitlist", {
-            name,
-            email,
-            phoneNumber,
-            isPodcaster
-         })
-
-         alert("Sucessfully joined the waitlist!");
+         addDoc(collection(firestore, "users"), {
+            name: name,
+            email: email,
+            phoneNumber: phoneNumber,
+            isPodcaster: isPodcaster
+         });
+         alert('Added to the waitlist!');
          window.location.reload();
-
-         /* There was an error sending the information to the backend */
       } catch (err) {
-         console.log(err)
+         console.log(err);
       }
-   }
+
+
+   };
 
 
    return (
@@ -48,27 +72,27 @@ function LandingPage() {
                      <img className="pt-3" draggable="false" src="assets/img/white.png" />
                      <h5 className="display-5 text-center text-lg-start pt-new pb-sm-2 pb-md-3">Where podcasters & fans thrive together. </h5>
                      <h4 className="fs-lg text-center text-xl-start  mx-auto mx-lg-0 mb-5">Stream and trade features of your favorite podcasts.</h4>
-                     <form className="needs-validation" onSubmit={joinWaitlist} novalidate>
+                     <form className="needs-validation">
                         <div className="row row-cols-1 row-cols-sm-2 row-cols-md-1 row-cols-lg-2">
                            <div className="col mb-3">
-                              <input className="form-control form-control-lg" type="text" placeholder="Name" onChange={(event) => setName(event.target.value)} required />
+                              <input className="form-control form-control-lg" type="text" id="name" placeholder="Name" />
                            </div>
                            <div className="col mb-3">
-                              <input className="form-control form-control-lg" type="text" placeholder="Phone #" onChange={(event) => setPhoneNumber(event.target.value)} required />
+                              <input className="form-control form-control-lg" type="text" id="phoneNumber" placeholder="Phone #" />
                            </div>
                         </div>
                         <div className="mb-3">
                            <div className="position-relative"><i className="ai-mail fs-lg position-absolute top-50 start-0 translate-middle-y ms-3"></i>
-                              <input className="form-control form-control-lg ps-5" type="email" placeholder="Email address" onChange={(event) => setEmail(event.target.value)} required />
+                              <input className="form-control form-control-lg ps-5" type="email" id="email" placeholder="Email address" />
                            </div>
                         </div>
                         <div className="pb-2">
                            <div className="form-check my-2">
-                              <input className="form-check-input" type="checkbox" id="terms" onClick={checkIsPodcaster} />
-                              <label className="form-check-label ms-1" for="terms" onChange={(event) => setIsPodcaster(event.target.value)} >Are you a podcaster?</label>
+                              <input className="form-check-input" type="checkbox" id="isPodcaster" />
+                              <label className="form-check-label ms-1" htmlFor="terms" >Are you a podcaster?</label>
                            </div>
                         </div>
-                        <button className="btn btn-lg btn-info w-100 mb-4" type="submit">Sign up for the waitlist</button>
+                        <button className="btn btn-lg btn-info w-100 mb-4" type="button" id="submit"> Sign up for the waitlist</button>
                         <div className="row row-cols-1 row-cols-sm-2 gy-3">
                            <div className="col"><a className="btn btn-icon btn-outline-secondary btn-instagram btn-lg w-100" href="/Podcasters"><i className="ai-headphone fs-xl me-2"></i>Podcasters</a></div>
                            <div className="col"><a className="btn btn-icon btn-outline-secondary btn-evernote btn-lg w-100" href="/Investors"><i className="ai-bar-chart-1 fs-xl me-2"></i>Investors</a></div>
@@ -83,5 +107,8 @@ function LandingPage() {
       </>
    );
 }
+<script>
+
+</script>
 
 export default LandingPage;

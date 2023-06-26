@@ -5,14 +5,15 @@ import Investors from './Investors';
 import Podcasters from './Podcasters';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Router>
-  <Routes>
-    <Route path="/" element={<LandingPage />} />
-    <Route path="/Podcasters" element={<Podcasters />} />
-    <Route path="/Investors" element={<Investors />} />
-  </Routes>
-</Router>
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/Podcasters" element={<Podcasters />} />
+      <Route path="/Investors" element={<Investors />} />
+    </Routes>
+  </Router>
 );
 
