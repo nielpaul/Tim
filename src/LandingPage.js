@@ -4,8 +4,6 @@ import axios from 'axios';
 import { initializeApp } from "firebase/app";
 import { getFirestore, addDoc, collection } from "firebase/firestore";
 
-
-
 function LandingPage() {
 
    // TODO: Add SDKs for Firebase products that you want to use
@@ -27,7 +25,6 @@ function LandingPage() {
    const firebaseApp = initializeApp(firebaseConfig);
    const firestore = getFirestore(firebaseApp);
 
-
    useEffect(() => {
       const submit = document.querySelector("#submit");
       submit.addEventListener('click', submitData);
@@ -41,21 +38,18 @@ function LandingPage() {
       var isPodcaster = document.getElementById("isPodcaster").value;
 
       try {
-         await addDoc(collection(firestore, "users"), {
+         addDoc(collection(firestore, "users"), {
             name: name,
             email: email,
             phoneNumber: phoneNumber,
             isPodcaster: isPodcaster
          });
-         alert('Added to the waitlist!');
          window.location.reload();
+         alert('Added to the waitlist!');      
       } catch (err) {
          console.log(err);
       }
-
-
    };
-
 
    return (
       <>
