@@ -31,11 +31,6 @@ function LandingPage() {
    useEffect(() => {
       const submit = document.querySelector("#submit");
       submit.addEventListener('click', submitData);
-
-      // Clean up the event listener when the component unmounts
-      return () => {
-         submit.removeEventListener('click', submitData);
-      };
    }, []);
 
    function submitData() {
